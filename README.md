@@ -1,9 +1,9 @@
-# System Design & Backend Architecture — Study Series
+# System Design & Backend Architecture Notes
 
 Each roadmap section has its own document. Read them **in order**: every document only depends on the ones before it.
 
 | # | File | Topic |
-|---|---|---|
+| --- | --- | --- |
 | 00 | `00-prerequisites.md` | Programming fundamentals, data structures & algorithms |
 | 01 | `01-computer-systems-fundamentals.md` | How a computer works, CPU & memory |
 | 02 | `02-operating-systems.md` | Processes, threads, scheduling, concurrency, memory, I/O |

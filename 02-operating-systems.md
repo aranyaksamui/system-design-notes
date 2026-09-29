@@ -1,4 +1,4 @@
-# 02 — Operating Systems
+# 02 - Operating Systems
 
 The OS sits between your program and the hardware. Every backend server is a process (or several) managed by an OS, so nearly every performance and reliability problem you will meet has an OS explanation.
 
@@ -282,7 +282,7 @@ An integer counter with two atomic operations:
 
 A **binary semaphore** ($0/1$) behaves like a lock; a **counting semaphore** limits access to $N$ identical resources (e.g. a pool of $N$ database connections).
 
-Unlike a mutex, any thread can `signal()` — semaphores are also used for signalling between threads.
+Unlike a mutex, any thread can `signal()` - semaphores are also used for signalling between threads.
 
 ## Monitor
 
@@ -345,7 +345,7 @@ Thread 2: holds Lock B, wants Lock A
 
 ## Handling Deadlocks
 
-**Prevention** — break at least one condition:
+**Prevention** - break at least one condition:
 
 | Break | How |
 | --- | --- |
@@ -367,11 +367,11 @@ function transfer(from, to, amount) {
 }
 ```
 
-**Avoidance** — the OS only grants a request if the system stays in a **safe state** (a safe order of completion exists). Classic algorithm: **Banker's algorithm**. Requires advance knowledge of maximum needs, so it is rarely used in practice.
+**Avoidance** - the OS only grants a request if the system stays in a **safe state** (a safe order of completion exists). Classic algorithm: **Banker's algorithm**. Requires advance knowledge of maximum needs, so it is rarely used in practice.
 
-**Detection and recovery** — allow deadlocks, detect them by finding cycles in a **wait-for graph**, then recover (kill a process, roll back, preempt). Databases do exactly this (doc 14).
+**Detection and recovery** - allow deadlocks, detect them by finding cycles in a **wait-for graph**, then recover (kill a process, roll back, preempt). Databases do exactly this (doc 14).
 
-**Ignoring** ("ostrich algorithm") — common in general-purpose OSes; combine with timeouts.
+**Ignoring** ("ostrich algorithm") - common in general-purpose OSes; combine with timeouts.
 
 Related problems: **livelock** (threads keep reacting to each other without progress) and **starvation** (a thread never gets the resource).
 
@@ -526,7 +526,7 @@ int main() {
 
 Sockets use related calls: `socket`, `bind`, `listen`, `accept`, `connect`, `send`/`recv` (see doc 03/05).
 
-Tools: `strace` (Linux) shows a process's system calls — very useful for debugging.
+Tools: `strace` (Linux) shows a process's system calls - very useful for debugging.
 
 ---
 

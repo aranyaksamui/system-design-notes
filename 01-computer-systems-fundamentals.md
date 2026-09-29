@@ -1,10 +1,10 @@
-# 01 — Computer & Systems Fundamentals
+# 01 - Computer & Systems Fundamentals
 
 Every server is a computer. To reason about server performance you must know what the CPU, memory and storage actually do, and how slow each one is compared to the others.
 
 ---
 
-# Part A — How a Computer Works
+# Part A - How a Computer Works
 
 ## A.1 The Big Picture
 
@@ -68,7 +68,7 @@ Example: $1011_2 = 1\cdot 8 + 0\cdot 4 + 1\cdot 2 + 1\cdot 1 = 11$.
 
 $$\text{value} = (-1)^{s} \times 1.f \times 2^{\,e - 1023}$$
 
-**Endianness.** Byte order of multi-byte numbers. **Little-endian** stores the least significant byte first (x86, most ARM). **Big-endian** stores the most significant byte first (this is also "network byte order" used in network protocols — see doc 03/05).
+**Endianness.** Byte order of multi-byte numbers. **Little-endian** stores the least significant byte first (x86, most ARM). **Big-endian** stores the most significant byte first (this is also "network byte order" used in network protocols - see doc 03/05).
 
 **Data size units** (used constantly in estimation):
 
@@ -124,7 +124,7 @@ Modern CPUs **pipeline** instructions (overlap the stages of different instructi
 
 ---
 
-# Part B — CPU & Memory
+# Part B - CPU & Memory
 
 ## B.1 CPU Concepts
 
@@ -229,7 +229,7 @@ Worked example: cache access $= 1\ \text{ns}$, RAM access $= 100\ \text{ns}$, hi
 
 $$\text{AMAT} = 1 + 0.05 \times 100 = 6\ \text{ns}$$
 
-If $h$ drops to $0.90$: $\text{AMAT} = 1 + 0.10\times100 = 11\ \text{ns}$ — almost double. Tiny changes in hit ratio have a big effect on performance. **The exact same formula applies to application caches like Redis** (doc 23).
+If $h$ drops to $0.90$: $\text{AMAT} = 1 + 0.10\times100 = 11\ \text{ns}$ - almost double. Tiny changes in hit ratio have a big effect on performance. **The exact same formula applies to application caches like Redis** (doc 23).
 
 Types of misses: **compulsory** (first access), **capacity** (cache too small), **conflict** (mapping collisions).
 
@@ -296,7 +296,7 @@ If page 2 maps to frame 7: physical address $= 7\times4096+1808 = 30480$.
 3. Loads it into a free frame (evicting another page if needed).
 4. Updates the page table and resumes the instruction.
 
-A page fault that reads from disk costs milliseconds (HDD) or ~100 µs (SSD) — a huge slowdown. If a system constantly swaps pages in and out, it is **thrashing**.
+A page fault that reads from disk costs milliseconds (HDD) or ~100 µs (SSD) - a huge slowdown. If a system constantly swaps pages in and out, it is **thrashing**.
 
 **TLB** (Translation Lookaside Buffer): a small cache of recent page-table entries so most address translations avoid extra memory reads (see doc 02).
 
@@ -347,4 +347,4 @@ Example: 200 requests/s arrive and each takes 0.05 s on average $\Rightarrow$ $L
 - $\text{AMAT} = t_{\text{hit}} + (1-h)\,t_{\text{miss}}$: small hit-ratio changes matter a lot.
 - Virtual memory gives isolation and flexibility via pages and page tables; page faults to disk are very expensive.
 - CPU-bound work needs more cores; I/O-bound work needs better concurrency.
-- Know the latency orders of magnitude (ns → µs → ms) — they justify almost every design decision later.
+- Know the latency orders of magnitude (ns → µs → ms) - they justify almost every design decision later.

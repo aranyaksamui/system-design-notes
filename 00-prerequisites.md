@@ -1,4 +1,4 @@
-# 00 — Prerequisites: Programming & Data Structures/Algorithms
+# 00 - Prerequisites: Programming & Data Structures/Algorithms
 
 System design decides *which* data structure, *which* algorithm and *how much* it costs at scale. Without these basics, every later topic (indexes, caches, queues, sharding) will feel like magic.
 
@@ -24,7 +24,7 @@ System design decides *which* data structure, *which* algorithm and *how much* i
 
 ---
 
-# Part A — Programming Fundamentals
+# Part A - Programming Fundamentals
 
 ## A.1 Variables, Data Types, Operators
 
@@ -220,8 +220,8 @@ Key ideas:
 
 A function that calls itself. Every recursion needs:
 
-1. **Base case** — stops the recursion.
-2. **Recursive case** — reduces the problem toward the base case.
+1. **Base case** - stops the recursion.
+2. **Recursive case** - reduces the problem toward the base case.
 
 ```js
 function factorial(n) {
@@ -478,7 +478,7 @@ Good practice:
 - Fail fast on invalid input; validate at boundaries.
 - Never swallow errors silently.
 - Distinguish **expected** errors (validation) from **unexpected** ones (bugs).
-- Always release resources (files, connections) — use `finally` or equivalent.
+- Always release resources (files, connections) - use `finally` or equivalent.
 
 ---
 
@@ -648,7 +648,7 @@ Informally: $O$ = "at most", $\Omega$ = "at least", $\Theta$ = "exactly this gro
 
 ---
 
-# Part B — Data Structures & Algorithms
+# Part B - Data Structures & Algorithms
 
 ## B.1 Arrays
 
@@ -986,7 +986,7 @@ Using `unique_ptr` means the whole trie frees itself automatically.
 
 Any comparison-based sort needs $\Omega(n \log n)$ comparisons in the worst case. **Stable** means equal elements keep their original relative order.
 
-**External sorting** (data larger than RAM) uses merge sort on disk chunks — this shows up in databases and big-data systems.
+**External sorting** (data larger than RAM) uses merge sort on disk chunks - this shows up in databases and big-data systems.
 
 **C++:**
 
@@ -1222,15 +1222,15 @@ int minCoins(const std::vector<int>& coins, int amount) {
 
 The memoized C++ Fibonacci is in A.4.
 
-## B.18 Basic Algorithmic Complexity — Data Structure Cheat Sheet
+## B.18 Basic Algorithmic Complexity - Data Structure Cheat Sheet
 
 | Structure | Access | Search | Insert | Delete |
 | --- | --- | --- | --- | --- |
 | Array | $O(1)$ | $O(n)$ | $O(n)$ | $O(n)$ |
 | Linked list | $O(n)$ | $O(n)$ | $O(1)^*$ | $O(1)^*$ |
-| Stack / Queue | — | $O(n)$ | $O(1)$ | $O(1)$ |
-| Hash table (avg) | — | $O(1)$ | $O(1)$ | $O(1)$ |
-| Balanced BST | — | $O(\log n)$ | $O(\log n)$ | $O(\log n)$ |
+| Stack / Queue | - | $O(n)$ | $O(1)$ | $O(1)$ |
+| Hash table (avg) | - | $O(1)$ | $O(1)$ | $O(1)$ |
+| Balanced BST | - | $O(\log n)$ | $O(\log n)$ | $O(\log n)$ |
 | Heap | peek $O(1)$ | $O(n)$ | $O(\log n)$ | $O(\log n)$ |
 
 $^*$ when the position/node is already known.

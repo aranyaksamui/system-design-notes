@@ -1,4 +1,4 @@
-# 04 — IP Networking
+# 04 - IP Networking
 
 IP (Internet Protocol) gives every host an address and moves packets across networks toward it. This document covers addressing (IPv4/IPv6, subnets, CIDR), routing (routers, gateways, NAT) and DNS (turning names into addresses).
 

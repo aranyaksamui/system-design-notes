@@ -1,4 +1,4 @@
-# 03 — Networking Fundamentals
+# 03 - Networking Fundamentals
 
 Almost every backend system is a set of programs talking over a network. This document explains what a network is, the vocabulary (host, port, socket), and the layered models (OSI and TCP/IP) that organize how data travels.
 
@@ -300,13 +300,13 @@ The **OSI (Open Systems Interconnection) model** splits network communication in
 
 Memory aid (top to bottom): **A**ll **P**eople **S**eem **T**o **N**eed **D**ata **P**rocessing.
 
-## Layer 1 — Physical
+## Layer 1 - Physical
 
 Transmits raw bits as electrical, optical or radio signals. Concerns: cables (copper, fiber), connectors, voltage/light levels, frequencies, bit rate.
 
 - Examples: Ethernet cables, fiber optics, Wi-Fi radio, hubs, repeaters.
 
-## Layer 2 — Data Link
+## Layer 2 - Data Link
 
 Delivers **frames** between two devices on the **same local network**. Adds a header with **MAC addresses** and a trailer with an error-detection check (CRC, called the FCS).
 
@@ -345,7 +345,7 @@ struct eth_header {
 } __attribute__((packed));          /* GCC/Clang: no padding between fields */
 ```
 
-## Layer 3 — Network
+## Layer 3 - Network
 
 Moves **packets** across **multiple networks** from source host to destination host. Provides logical addressing (IP addresses) and **routing** (choosing the path).
 
@@ -354,7 +354,7 @@ Moves **packets** across **multiple networks** from source host to destination h
 
 Details in doc 04.
 
-## Layer 4 — Transport
+## Layer 4 - Transport
 
 Delivers data between **processes** (not just hosts) using **ports**. Provides multiplexing of many conversations over one IP address, and optionally reliability, ordering, flow control and congestion control.
 
@@ -364,15 +364,15 @@ Delivers data between **processes** (not just hosts) using **ports**. Provides m
 
 Details in doc 05.
 
-## Layer 5 — Session
+## Layer 5 - Session
 
 Establishes, manages and terminates **sessions** (long-lived conversations) between applications, including checkpointing and resuming. In practice this layer is not a separate layer in real protocol stacks; its functions are handled by the application or by protocols such as TLS session resumption, RPC frameworks or cookies/session IDs.
 
-## Layer 6 — Presentation
+## Layer 6 - Presentation
 
 Translates data between the application's format and the network format: **character encoding** (UTF-8), **serialization** (JSON, Protocol Buffers), **compression** (gzip), and **encryption** (TLS is often placed here, although it is really implemented between the application and transport layers).
 
-## Layer 7 — Application
+## Layer 7 - Application
 
 The layer closest to the user program; defines protocols for specific tasks.
 
