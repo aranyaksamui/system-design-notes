@@ -1,4 +1,4 @@
-# 08 — OOP Fundamentals
+# 08 - OOP Fundamentals
 
 **Object-oriented programming (OOP)** organizes a program as a set of **objects**, each bundling **data** (state) with the **operations** (behavior) that act on that data. OOP is the main prerequisite for low-level design (doc 20) and design patterns (doc 10).
 
@@ -7,7 +7,7 @@ Code here is shown in **JavaScript, Python, C++, C#** and, where it explains the
 ## OOP Across Languages at a Glance
 
 | Feature | C | C++ | C# | Python | JavaScript |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Classes | No (structs + functions) | Yes | Yes | Yes | Yes (`class` is syntax over prototypes) |
 | Access control | Opaque pointers, `static` | `public` / `protected` / `private` | `public` / `protected` / `private` / `internal` | Convention (`_x`), name mangling (`__x`) | `#private` fields, convention |
 | Inheritance | Manual (embed a struct) | Multiple | Single class + many interfaces | Multiple (MRO) | Single (prototype chain) |
@@ -280,7 +280,7 @@ double total = shapes.Sum(s => s.Area());
 **Kinds of polymorphism**
 
 | Kind | Meaning | Example |
-|---|---|---|
+| --- | --- | --- |
 | **Subtype** (runtime) | Base reference, derived behavior | `virtual` / `override` above |
 | **Parametric** | One definition works for many types | C++ templates, C# generics, `List<T>` |
 | **Ad hoc** | Same name, different implementations chosen by argument types | Overloading, operator overloading |
@@ -288,7 +288,7 @@ double total = shapes.Sum(s => s.Area());
 ## The Four Pillars
 
 | Pillar | One-line meaning | Benefit |
-|---|---|---|
+| --- | --- | --- |
 | Encapsulation | Data + rules together, internals hidden | Invariants enforced in one place |
 | Abstraction | Expose a simple contract | Callers need not know details |
 | Inheritance | Derive new classes from existing ones | Reuse, is-a modelling |
@@ -301,7 +301,7 @@ double total = shapes.Sum(s => s.Area());
 Classes rarely stand alone. The relationship between two classes determines **coupling** (how much a change in one forces a change in the other) and **lifetime** (who creates and destroys whom). From weakest to strongest coupling:
 
 | Relationship | Meaning | Lifetime | UML symbol | Example |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **Dependency** | One class **uses** another briefly (parameter, local variable) | None | dashed arrow `- - ->` | `OrderService.confirm(order, emailClient)` |
 | **Association** | One class **holds a reference** to another | Independent | solid line `———` | Teacher ↔ Student |
 | **Aggregation** | "Has-a", whole-part; parts **can outlive** the whole | Independent | hollow diamond `◇——` | Team ◇— Player |
@@ -381,7 +381,7 @@ public class Team { private readonly List<Player> _players; public Team(List<Pla
 A **constructor** runs when an object is created and must leave it in a **valid state**.
 
 | Language | Constructor |
-|---|---|
+| --- | --- |
 | C++ | `ClassName(...)`, with a **member initializer list**: `Account(long long c) : balance_(c) {}` |
 | C# | `public ClassName(...)`; chain with `: this(...)` or `: base(...)` |
 | Python | `__init__(self, ...)` initializes; `__new__` actually creates the object |
@@ -566,7 +566,7 @@ def _(x: str): return "a string"
 **Overriding** = a subclass provides its own version of an inherited method with the **same signature**. The version run is chosen at **runtime** from the object's actual type.
 
 | | Overloading | Overriding |
-|---|---|---|
+| --- | --- | --- |
 | Where | Same class | Subclass vs parent |
 | Signature | Different parameters | Identical |
 | Resolved | Compile time | Runtime |
@@ -685,7 +685,7 @@ A class with **more than one parent**.
 ```
 
 | Language | Approach |
-|---|---|
+| --- | --- |
 | **C++** | Allowed. Without `virtual` inheritance, `D` contains **two** `A` subobjects and `d.x` is ambiguous. Declaring `B : virtual A` and `C : virtual A` makes `D` share **one** `A`. |
 | **C#** | A class has **one** base class but may implement **many interfaces**, which avoids the problem. |
 | **Python** | Allowed. Method lookup order is the **MRO** (computed by C3 linearization). |
